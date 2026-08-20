@@ -1,5 +1,17 @@
- # Interactive Productivity Dashboard For **WEB-115**
-## This project is a web-based dashboard built for **WEB-115** to demonstrate interactive JavaScript features.
+# Interactive Productivity Dashboard for WEB-115
 
-## TODO: Future Stuff
-- [ ]
+A web-based productivity dashboard created for **WEB-115**. This project demonstrates interactive JavaScript features.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+## Planned Features
+
+- [ ] In progress
+
+## Author
+
+Created by Dmitro Vizir for WEB-115.
