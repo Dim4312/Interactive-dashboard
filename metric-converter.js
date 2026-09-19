@@ -13,12 +13,10 @@ converterForm.addEventListener("submit", function (event) {
     const selectedOption = conversionSelect.getElementsByTagName("option")[conversionSelect.selectedIndex];
     const conversionChoice = selectedOption ? Number(selectedOption.value) : 0;
 
-    resultOutput.classList.remove("error");
     valueInput.removeAttribute("aria-invalid");
 
     if (!Number.isFinite(inputValue)) {
         resultOutput.innerHTML = "Please enter a valid, finite number.";
-        resultOutput.classList.add("error");
         valueInput.setAttribute("aria-invalid", "true");
         valueInput.focus();
         return;
@@ -63,17 +61,15 @@ converterForm.addEventListener("submit", function (event) {
         targetUnit = "miles";
     } else {
         resultOutput.innerHTML = "Please select a valid conversion type.";
-        resultOutput.classList.add("error");
         return;
     }
 
     if (!Number.isFinite(result)) {
         resultOutput.innerHTML = "That number is too large to convert. Please enter a smaller value.";
-        resultOutput.classList.add("error");
         return;
     }
 
     // Only parsed numbers and fixed unit labels are inserted into the output.
-    resultOutput.innerHTML = inputValue + " " + sourceUnit + " is <strong>" +
-        result.toFixed(2) + " " + targetUnit + "</strong>.";
+    resultOutput.innerHTML = inputValue + " " + sourceUnit + " is " +
+        result.toFixed(2) + " " + targetUnit + ".";
 });
