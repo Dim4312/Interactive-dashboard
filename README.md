@@ -85,4 +85,4 @@ Open `index.html` in a browser or use the live link below. For example, entering
 
 ## Author
 
-Created by Dmitro Vizir for WEB-115.
+Created by Dmytro Vizir for WEB-115.
