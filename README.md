@@ -78,7 +78,15 @@ END
 
 Open `index.html` in a browser or use the live link below. For example, entering 10 and choosing Inch to Centimeter gives 25.40 centimeters. An empty field shows an error message.
 
-### Submission Links
+## Magic Eight Ball
+
+Type a yes/no question and click the ball to get a random answer. An empty question shows an alert. Click **Ask another question** to clear the question and hide the answer.
+
+The game uses an `answers` array, `Math.random()`, and event listeners. The image and shake animation came from the assignment starter files. The **Add a response** button lets you add an answer and logs it and the number of answers to the console. Added responses last until the page is refreshed.
+
+This feature was made and tested on the `development` branch before merging into `main`.
+
+## Submission Links
 
 - [GitHub repository](https://github.com/Dim4312/Interactive-dashboard)
 - [Live GitHub Pages dashboard](https://dim4312.github.io/Interactive-dashboard/)

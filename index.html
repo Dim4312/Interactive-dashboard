@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>My Interactive Dashboard</title>
 		<link rel="stylesheet" href="css/style.css?v=1">
+		<link rel="stylesheet" href="css/magic-eight-ball.css">
 		<link rel="icon" href="favicon.svg" type="image/svg+xml">
 	</head>
 	<body>
@@ -41,6 +42,21 @@
 					</form>
 					<div id="conversion-result" role="status" aria-live="polite" aria-atomic="true">Result:</div>
 					<script src="metric-converter.js" defer></script>
+				</div>
+				<div class="col" id="magic-eight-ball">
+					<script src="js/magic-eight-ball.js" defer></script>
+					<h2 class="heading">Magic Eight Ball</h2>
+					<form id="eight-ball-form">
+						<p>Type a yes/no question, then click the Eight Ball to get an answer.</p>
+						<label for="question">Your question</label>
+						<input id="question" name="question" type="text">
+						<div id="magicEightBall">
+							<div id="circle" role="status" aria-live="polite"></div>
+							<img id="ball" src="img/magic-eight-ball.png" alt="Ask the Magic Eight Ball" role="button" tabindex="0">
+						</div>
+						<button id="reset" name="reset" type="reset">Ask another question</button>
+						<button id="add-response" type="button">Add a response</button>
+					</form>
 				</div>
 			</div>
 		</main>
