@@ -12,6 +12,13 @@ A web-based productivity dashboard created for **WEB-115**. This project demonst
 ## TODO
 
 - [x] Add weekly task goal calculator
+- [x] Add dynamic weekly task list
+
+## Task Manager
+
+Enter a task under **Weekly Task List** and click **Add Task**. Each task appears in the list, and the input clears for the next task. Empty entries are ignored. Tasks last until the page is refreshed.
+
+The heading, instructions, and form are in `index.html` inside `weekly-tasks` and `task-list`. In `js/task-manager.js`, the global `myTasks` array stores each task with `.push()`. JavaScript creates the `ul` and each `li` with `document.createElement()`, then adds them with `appendChild()`. Task names are text nodes, so typed HTML is shown as text.
 
 ## Weekly Task Goals
 

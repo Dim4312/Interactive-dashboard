@@ -10,11 +10,11 @@ h1 {
     color: navy;
 }
 
-h2 {
+h2, h3 {
     font-size: 22px;
 }
 
-#metric-converter, #magic-eight-ball, #weekly-goals {
+#metric-converter, #magic-eight-ball, #weekly-tasks {
     margin-top: 25px;
 }
 
@@ -46,4 +46,13 @@ footer {
     margin-top: 25px;
     font-size: 14px;
     color: #555555;
+}
+
+#task-list {
+    margin-top: 25px;
+}
+
+#user-tasks {
+    margin-top: 15px;
+    overflow-wrap: anywhere;
 }
