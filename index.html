@@ -4,20 +4,20 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>My Interactive Dashboard</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css?v=1">
 		<link rel="stylesheet" href="css/magic-eight-ball.css">
 		<link rel="icon" href="favicon.svg" type="image/svg+xml">
 	</head>
 	<body>
-		<header>
+		<header class="container">
 			<h1>My Interactive Dashboard</h1>
 			<p>This is my dashboard for WEB-115.</p>
 		</header>
-		<!-- The <noscript> is for web browsers with JavaScript rendering disabled. -->
 		<noscript>Unfortunately, your web browser does not support JavaScript.</noscript>
-		<main>
+		<main class="container">
 			<div class="row">
-				<div class="col" id="metric-converter">
+				<div class="col-12 col-md-6 col-lg-4" id="metric-converter">
 					<h2>Imperial/Metric Converter</h2>
 					<p>Enter a number and choose a conversion below.</p>
 					<form id="converter-form" novalidate>
@@ -43,7 +43,7 @@
 					<div id="conversion-result" role="status" aria-live="polite" aria-atomic="true">Result:</div>
 					<script src="metric-converter.js" defer></script>
 				</div>
-				<div class="col" id="magic-eight-ball">
+				<div class="col-12 col-md-6 col-lg-4" id="magic-eight-ball">
 					<script src="js/magic-eight-ball.js" defer></script>
 					<h2 class="heading">Magic Eight Ball</h2>
 					<form id="eight-ball-form">
@@ -58,8 +58,30 @@
 						<button id="add-response" type="button">Add a response</button>
 					</form>
 				</div>
+				<div class="col-12 col-md-6 col-lg-4" id="weekly-goals">
+					<h2>Weekly Goals</h2>
+					<p>Calculate your task goal for five workdays, plus bonus tasks.</p>
+					<form id="goal-form" novalidate>
+						<div>
+							<label for="user-name">Name</label>
+							<input type="text" id="user-name" name="userName" required>
+						</div>
+						<div>
+							<label for="daily-goal">Daily task goal</label>
+							<input type="number" id="daily-goal" name="dailyGoal" min="0" step="1" required>
+						</div>
+						<div>
+							<label for="bonus-tasks">Bonus tasks</label>
+							<input type="number" id="bonus-tasks" name="bonusTasks" min="0" step="1" value="0" required>
+						</div>
+						<button type="submit">Calculate weekly goal</button>
+					</form>
+					<div id="goal-message" role="status" aria-live="polite" aria-atomic="true">Enter your goals above.</div>
+					<script src="js/weekly-goals.js" defer></script>
+				</div>
 			</div>
 		</main>
-		<footer>Created by Dmytro Vizir for WEB-115.</footer>
+		<footer class="container">Created by Dmytro Vizir for WEB-115.</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 	</body>
 </html>

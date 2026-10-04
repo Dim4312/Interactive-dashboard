@@ -1,10 +1,10 @@
 // Metric Converter Tool
 alert("Metric Converter");
 var value = prompt("Enter a numeric value:");
-value = Number(value);
+value = parseFloat(value);
 alert("Select a conversion:\n1. Inch to Centimeter\n2. Foot to Centimeter\n3. Yard to Meter\n4. Mile to Kilometer\n5. Centimeter to Inch\n6. Centimeter to Foot\n7. Meter to Yard\n8. Kilometer to Mile");
 var conversionChoice = prompt("Enter the number of your conversion choice:");
-conversionChoice = Number(conversionChoice);
+conversionChoice = parseInt(conversionChoice, 10);
 var result;
 if (conversionChoice === 1) {
     result = value * 2.54;

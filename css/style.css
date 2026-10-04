@@ -14,12 +14,11 @@ h2 {
     font-size: 22px;
 }
 
-#metric-converter {
+#metric-converter, #magic-eight-ball, #weekly-goals {
     margin-top: 25px;
-    max-width: 500px;
 }
 
-#converter-form div {
+#converter-form div, #goal-form div {
     margin-bottom: 10px;
 }
 
@@ -39,7 +38,7 @@ button {
     padding: 4px 10px;
 }
 
-#conversion-result {
+#conversion-result, #goal-message {
     margin-top: 15px;
 }
 

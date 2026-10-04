@@ -7,6 +7,17 @@ A web-based productivity dashboard created for **WEB-115**. This project demonst
 - HTML
 - CSS
 - JavaScript
+- Bootstrap 5.3 (CSS and JavaScript from the jsDelivr CDN)
+
+## TODO
+
+- [x] Add weekly task goal calculator
+
+## Weekly Task Goals
+
+Enter a name, a daily task goal, and any bonus tasks, then click **Calculate weekly goal**. The calculator multiplies the daily goal by five workdays and adds the bonus tasks. For example, a daily goal of 5 and 2 bonus tasks gives a total weekly goal of 27.
+
+The form requires a name and whole task counts of zero or more. You can change the inputs and calculate again for another person. The reusable `weeklyGoal(userName, dailyGoal, bonusTasks)` function calculates the total and displays it in `goal-message` using `innerHTML`. The name is inserted with `textContent` so it is displayed as text. This component uses `js/weekly-goals.js` and appears alongside the converter and Magic Eight Ball in Bootstrap columns, which stack on small screens.
 
 ## Imperial/Metric Converter
 

@@ -1,22 +1,18 @@
-// Adapted from the prompt-based Metric_Converter_Tool.js from Part 1.
+// Convert the value entered in the form.
 const converterForm = document.getElementById("converter-form");
 const valueInput = document.getElementById("converter-value");
 const resultOutput = document.getElementById("conversion-result");
 
-// A submit listener handles both the Convert button and the Enter key.
 converterForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const inputValue = parseFloat(document.getElementById("converter-value").value);
-    // Scope the tag lookup to this form so other dashboard selects cannot interfere.
-    const conversionSelect = converterForm.getElementsByTagName("select")[0];
-    const selectedOption = conversionSelect.getElementsByTagName("option")[conversionSelect.selectedIndex];
-    const conversionChoice = selectedOption ? Number(selectedOption.value) : 0;
+    const inputValue = parseFloat(valueInput.value);
+    const conversionChoice = parseInt(document.getElementById("conversion-type").value, 10);
 
     valueInput.removeAttribute("aria-invalid");
 
-    if (!Number.isFinite(inputValue)) {
-        resultOutput.innerHTML = "Please enter a valid, finite number.";
+    if (!isFinite(inputValue)) {
+        resultOutput.textContent = "Please enter a valid number.";
         valueInput.setAttribute("aria-invalid", "true");
         valueInput.focus();
         return;
@@ -26,7 +22,6 @@ converterForm.addEventListener("submit", function (event) {
     let sourceUnit;
     let targetUnit;
 
-    // Use exact factors and their reciprocals; round only when displaying.
     if (conversionChoice === 1) {
         result = inputValue * 2.54;
         sourceUnit = "inches";
@@ -60,16 +55,15 @@ converterForm.addEventListener("submit", function (event) {
         sourceUnit = "kilometers";
         targetUnit = "miles";
     } else {
-        resultOutput.innerHTML = "Please select a valid conversion type.";
+        resultOutput.textContent = "Please select a valid conversion type.";
         return;
     }
 
-    if (!Number.isFinite(result)) {
-        resultOutput.innerHTML = "That number is too large to convert. Please enter a smaller value.";
+    if (!isFinite(result)) {
+        resultOutput.textContent = "That number is too large to convert. Please enter a smaller value.";
         return;
     }
 
-    // Only parsed numbers and fixed unit labels are inserted into the output.
-    resultOutput.innerHTML = inputValue + " " + sourceUnit + " is " +
+    resultOutput.textContent = inputValue + " " + sourceUnit + " is " +
         result.toFixed(2) + " " + targetUnit + ".";
 });

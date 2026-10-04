@@ -17,9 +17,7 @@ const question = document.getElementById("question");
 // Pick an answer and show it over the ball's number.
 function displayAnswer() {
     let index = Math.floor(Math.random() * answers.length);
-    // Display added responses as text, even if they contain HTML characters.
-    circle.innerHTML = answers[index].replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+    circle.textContent = answers[index];
     circle.style.display = "flex";
 }
 
@@ -36,7 +34,7 @@ function askQuestion() {
 
 ball.addEventListener("mousedown", askQuestion);
 
-// Also allow the keyboard to ask a question without reloading the page.
+// Enter or Space can also ask a question.
 ball.addEventListener("keydown", function (event) {
     if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -54,7 +52,7 @@ document.getElementById("reset").addEventListener("click", function () {
     circle.style.display = "none";
 });
 
-// Bonus: add a response for this visit and log the new total.
+// Add a new answer.
 document.getElementById("add-response").addEventListener("click", function () {
     let response = prompt("Enter a new Eight Ball response (up to 60 characters):");
     if (response === null) {
