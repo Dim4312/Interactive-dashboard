@@ -21,7 +21,7 @@ The form requires a name and whole task counts of zero or more. You can change t
 
 ## Imperial/Metric Converter
 
-This app converts between inch, foot, yard, mile, centimeter, meter, and kilometer. Enter a number, select the conversion type, and click Convert to see the result.
+This app converts between inch, foot, yard, mile, centimeter, meter, and kilometer. Enter a number, select the conversion type, and click Convert to see the result. The converter code is in `js/metric-converter.js`.
 
 ### Logic and Pseudocode
 
@@ -91,7 +91,7 @@ Open `index.html` in a browser or use the live link below. For example, entering
 
 ## Magic Eight Ball
 
-Type a yes/no question and click the ball to get a random answer. An empty question shows an alert. Click **Ask another question** to clear the question and hide the answer.
+Type a yes/no question and click the ball to get one random answer. An empty question shows an alert. After an answer, more clicks do nothing and the question stays locked. Click **Ask another question** to clear the question, hide the answer, and allow a new question. Pressing Enter in the form does not give another answer.
 
 The game uses an `answers` array, `Math.random()`, and event listeners. The image and shake animation came from the assignment starter files. The **Add a response** button lets you add an answer and logs it and the number of answers to the console. Added responses last until the page is refreshed.
 

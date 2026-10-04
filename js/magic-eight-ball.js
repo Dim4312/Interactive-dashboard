@@ -13,6 +13,7 @@ const answers = [
 const ball = document.getElementById("ball");
 const circle = document.getElementById("circle");
 const question = document.getElementById("question");
+let hasAnswered = false;
 
 // Pick an answer and show it over the ball's number.
 function displayAnswer() {
@@ -23,32 +24,34 @@ function displayAnswer() {
 
 // Check that the user typed a question before giving an answer.
 function askQuestion() {
+    if (hasAnswered) {
+        return;
+    }
+
     if (document.getElementById("question").value.trim() === "") {
         circle.style.display = "none";
         alert("Please enter a yes/no question first.");
         question.focus();
     } else {
         displayAnswer();
+        hasAnswered = true;
+        question.readOnly = true;
+        ball.setAttribute("aria-disabled", "true");
     }
 }
 
-ball.addEventListener("mousedown", askQuestion);
-
-// Enter or Space can also ask a question.
-ball.addEventListener("keydown", function (event) {
-    if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        askQuestion();
-    }
-});
+ball.addEventListener("click", askQuestion);
 
 document.getElementById("eight-ball-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    askQuestion();
 });
 
-// The reset button clears the question and hides the answer.
+// Allow a new question only after the reset button is pressed.
 document.getElementById("reset").addEventListener("click", function () {
+    hasAnswered = false;
+    question.readOnly = false;
+    ball.removeAttribute("aria-disabled");
+    circle.textContent = "";
     circle.style.display = "none";
 });
 

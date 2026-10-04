@@ -1,4 +1,4 @@
-// Convert the value entered in the form.
+// Convert the numeric value entered in the form.
 const converterForm = document.getElementById("converter-form");
 const valueInput = document.getElementById("converter-value");
 const resultOutput = document.getElementById("conversion-result");
