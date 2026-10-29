@@ -13,6 +13,13 @@ A web-based productivity dashboard created for **WEB-115**. This project demonst
 
 - [x] Add weekly task goal calculator
 - [x] Add dynamic weekly task list
+- [x] Add real-time digital clock and current date
+
+## Current Time & Date
+
+The clock shows the user's local time in `HH:MM:SS AM/PM` format and their current date. It displays immediately and updates every second. Single-digit hours, minutes, and seconds have a leading zero. Midnight displays as `12:00:00 AM`, and noon displays as `12:00:00 PM`.
+
+The `digital-clock` container is written in `index.html` inside `main`. The deferred `js/digital-clock.js` script creates a new `Date` object in `updateClock()`, reads the time with `getHours()`, `getMinutes()`, and `getSeconds()`, and formats the calendar date with `toLocaleDateString()`. It writes both displays using `innerHTML` and repeats with `setInterval(updateClock, 1000)`. Reading a new date each time also keeps the date current after midnight. The component's text and colors are styled in `css/digital-clock.css`.
 
 ## Task Manager
 
