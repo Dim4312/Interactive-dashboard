@@ -1,0 +1,13 @@
+#digital-clock {
+    margin-top: 25px;
+}
+
+#clock-face {
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: navy;
+}
+
+#calendar-date {
+    margin-bottom: 0;
+}
